@@ -1,0 +1,27 @@
+body {
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.point-text {
+  display: none;
+}
+
+#main {
+  min-height: 50vh;
+}
+
+.card {
+  width: 98px;
+  height: 136.15px;
+  background-color: transparent;
+}
+
+#result h4 {
+  text-align: center;
+}
+
+#restart {
+  display: none;
+}
