@@ -2,6 +2,8 @@ let cardData = [];
 let deckId = "";
 let isOn = false;
 let cardValues = [];
+let balance = 1000;
+const betVolume = [100, 200, 500, 1000];
 
 const pointText = $(".point-text");
 const bankerPointText = $("#banker-point-text");
@@ -49,8 +51,12 @@ function newGameBtn() {
   if (!isOn) {
     startBtn.css("display", "block");
     restartBtn.css("display", "none");
-    pointText.css("display", "none");
+    pointText.css("display", "hidden");
   }
+}
+
+function getRndNum(min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 function bankerData() {
@@ -58,7 +64,11 @@ function bankerData() {
   bankerCard.append(
     `<img id="banker-card-image" src="${cardData[0].image}" alt="">`
   );
-  gsap.from("#banker-card-image", { x: 100, y: -500, duration: 0.2 });
+  gsap.from("#banker-card-image", {
+    x: getRndNum(0, 800),
+    y: -500,
+    duration: 0.2,
+  });
   bankerPointText.text(cardValues[0]);
 }
 
@@ -67,7 +77,11 @@ function playerData() {
   playerCard.append(
     `<img id="player-card-image" src="${cardData[1].image}" alt="">`
   );
-  gsap.from("#player-card-image", { x: -100, y: 500, duration: 0.2 });
+  gsap.from("#player-card-image", {
+    x: getRndNum(0, -800),
+    y: 500,
+    duration: 0.2,
+  });
 
   playerPointText.text(cardValues[1]);
 }
