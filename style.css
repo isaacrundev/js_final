@@ -15,6 +15,7 @@ header {
 
 #main {
   min-height: 50vh;
+  gap: 5vh;
 }
 
 .card {
@@ -32,5 +33,5 @@ header {
 }
 
 #bet-amount-button {
-  gap: 20px;
+  gap: 2vh;
 }

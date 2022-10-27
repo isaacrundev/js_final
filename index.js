@@ -36,6 +36,8 @@ function fetchCardsProperties() {
 }
 
 startBtn.click(() => {
+  addBtnGroup.prop("disabled", true);
+  subtractBtnGroup.prop("disabled", true);
   bankerData();
   setTimeout(() => {
     playerData();
@@ -139,6 +141,8 @@ restartBtn.click(() => {
   betAmtText.text(`Your Bet: $${betAmt}`);
   balanceText.text(`Your Current Balance: $${balance}`);
   betAmtIs0();
+  addBtnGroup.prop("disabled", false);
+  subtractBtnGroup.prop("disabled", false);
 });
 
 for (let i = 0; i < addBtnGroup.length; i++) {
