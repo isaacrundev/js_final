@@ -4,6 +4,11 @@ body {
   color: white;
 }
 
+header {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
 .point-text {
   display: hidden;
 }
@@ -24,4 +29,8 @@ body {
 
 #restart {
   display: none;
+}
+
+#bet-amount-button {
+  gap: 20px;
 }
