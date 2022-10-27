@@ -39,6 +39,7 @@ startBtn.click(() => {
   addBtnGroup.prop("disabled", true);
   subtractBtnGroup.prop("disabled", true);
   restartBtn.prop("disabled", true);
+  startBtn.prop("disabled", true);
   bankerData();
   setTimeout(() => {
     playerData();
@@ -125,7 +126,7 @@ function ranking(banker, player) {
     result.html("<h4>YOU WIN!</h4>");
   }
   if (balance <= 0) {
-    betAmtText.text(`You've ran out out of all you funds`);
+    betAmtText.text(`Unfortunately You've ran out out of all you funds`);
     balanceText.text(`GAME OVER`);
     startBtn.css("display", "none");
   } else {
