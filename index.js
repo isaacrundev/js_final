@@ -38,6 +38,7 @@ function fetchCardsProperties() {
 startBtn.click(() => {
   addBtnGroup.prop("disabled", true);
   subtractBtnGroup.prop("disabled", true);
+  restartBtn.prop("disabled", true);
   bankerData();
   setTimeout(() => {
     playerData();
@@ -45,8 +46,6 @@ startBtn.click(() => {
   setTimeout(() => {
     ranking(cardValues[0], cardValues[1]);
   }, 2000);
-  isOn = true;
-  newGameBtn();
 });
 
 function newGameBtn() {
@@ -125,6 +124,15 @@ function ranking(banker, player) {
     balanceText.text(`Your Current Balance: $${balance}`);
     result.html("<h4>YOU WIN!</h4>");
   }
+  if (balance <= 0) {
+    betAmtText.text(`You've ran out out of all you funds`);
+    balanceText.text(`GAME OVER`);
+    startBtn.css("display", "none");
+  } else {
+    restartBtn.prop("disabled", false);
+    isOn = true;
+    newGameBtn();
+  }
 }
 
 restartBtn.click(() => {
@@ -150,6 +158,11 @@ for (let i = 0; i < addBtnGroup.length; i++) {
     if (betVolumes[i] <= balance) {
       betAmt += betVolumes[i];
       balance -= betVolumes[i];
+      betAmtText.text(`Your Bet: $${betAmt}`);
+      balanceText.text(`Your Current Balance: $${balance}`);
+    } else if (i === 4) {
+      betAmt = balance;
+      balance -= betAmt;
       betAmtText.text(`Your Bet: $${betAmt}`);
       balanceText.text(`Your Current Balance: $${balance}`);
     }
