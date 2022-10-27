@@ -1,6 +1,7 @@
 # js_final  
 
 Project Stack:  
+
 Styling - Bootstrap  
 Libraries - jQuery, GSAP  
 Framework - HTML  
