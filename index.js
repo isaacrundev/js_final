@@ -162,8 +162,8 @@ for (let i = 0; i < addBtnGroup.length; i++) {
       betAmtText.text(`Your Bet: $${betAmt}`);
       balanceText.text(`Your Current Balance: $${balance}`);
     } else if (i === 4) {
-      betAmt = balance;
-      balance -= betAmt;
+      betAmt += balance;
+      balance = 0;
       betAmtText.text(`Your Bet: $${betAmt}`);
       balanceText.text(`Your Current Balance: $${balance}`);
     }
