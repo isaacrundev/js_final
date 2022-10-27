@@ -1,12 +1,12 @@
-# js_final
+# js_final  
 
-Project Stack:
-Styling - Bootstrap
-Libraries - jQuery, GSAP
-Framework - HTML
+Project Stack:  
+Styling - Bootstrap  
+Libraries - jQuery, GSAP  
+Framework - HTML  
 
 
-Reference:
+Reference:  
 
-Deck of Cards
-https://www.deckofcardsapi.com/
+Deck of Cards  
+https://www.deckofcardsapi.com/  
