@@ -76,7 +76,7 @@ function bankerData() {
     y: -500,
     duration: 0.5,
   });
-  bankerPointText.text(cardValues[0]);
+  bankerPointText.text(cardData[0].value);
 }
 
 function playerData() {
@@ -90,7 +90,7 @@ function playerData() {
     duration: 0.5,
   });
 
-  playerPointText.text(cardValues[1]);
+  playerPointText.text(cardData[1].value);
 }
 
 function cardNumberConverter(card) {
@@ -126,7 +126,7 @@ function ranking(banker, player) {
     result.html("<h4>YOU WIN!</h4>");
   }
   if (balance <= 0) {
-    betAmtText.text(`Unfortunately You've ran out out of all you funds`);
+    betAmtText.text(`Unfortunately You've ran out out of all your funds`);
     balanceText.text(`GAME OVER`);
     startBtn.css("display", "none");
   } else {

@@ -22,6 +22,14 @@
     <script defer src="index.js"></script>
   </head>
   <body>
+    <div
+      class="d-flex flex-column justify-content-center align-items-center d-none"
+      id="game-over"
+    >
+      <h4 class="game-over-text">You've bankrupted</h4>
+      <h3 class="game-over-text">💀 GAME OVER 💀</h3>
+      <button class="btn btn-light">Start Over</button>
+    </div>
     <header class="d-flex flex-column">
       <div class="point-container">
         <h3 class="point-text d-inline">CPU's Card:</h3>
@@ -44,8 +52,8 @@
     </div>
     <div id="result"></div>
     <div class="d-flex flex-row justify-content-center p-3">
-      <button class="btn btn-success" id="start" disabled>Start</button>
-      <button class="btn btn-success" id="restart">Restart</button>
+      <button class="btn btn-light" id="start" disabled>Start</button>
+      <button class="btn btn-light" id="restart">Next Game</button>
     </div>
     <div class="d-flex flex-column align-items-center" id="player-info-text">
       <h5 id="bet-amount-text">Your Bet: $0</h5>
@@ -64,7 +72,7 @@
         <button class="btn btn-light">-200</button>
         <button class="btn btn-light">-500</button>
         <button class="btn btn-light">-1000</button>
-        <button class="btn btn-light">Clear Bet</button>
+        <button class="btn btn-light">Clear</button>
       </div>
     </div>
   </body>

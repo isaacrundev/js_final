@@ -1,4 +1,5 @@
 body {
+  background-image: url(/img/free-casino-table-cloth-texture-1637741.jpg);
   width: 100%;
   background-color: black;
   color: white;
@@ -22,6 +23,7 @@ header {
   width: 98px;
   height: 136.15px;
   background-color: transparent;
+  border-color: transparent;
 }
 
 #result h4 {
@@ -34,4 +36,21 @@ header {
 
 #bet-amount-button {
   gap: 2vh;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(101, 101, 101);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  gap: 4vh;
+}
+
+.game-over-text {
+  text-align: center;
 }
