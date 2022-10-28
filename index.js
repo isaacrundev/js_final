@@ -18,6 +18,8 @@ const betAmtText = $("#bet-amount-text");
 const balanceText = $("#balance-text");
 const addBtnGroup = $("#add-btns .btn");
 const subtractBtnGroup = $("#subtract-btns .btn");
+const gameOverDiv = document.querySelector("#game-over");
+const startOverBtn = $("#start-over");
 
 function sendHttpReq(method, url, data) {
   return axios.get(url);
@@ -126,9 +128,13 @@ function ranking(banker, player) {
     result.html("<h4>YOU WIN!</h4>");
   }
   if (balance <= 0) {
-    betAmtText.text(`Unfortunately You've ran out out of all your funds`);
-    balanceText.text(`GAME OVER`);
     startBtn.css("display", "none");
+    gameOverDiv.classList.replace("d-none", "d-block");
+    gsap.fromTo(
+      gameOverDiv,
+      { y: -1000 },
+      { duration: 2, ease: "bounce", y: 0 }
+    );
   } else {
     restartBtn.prop("disabled", false);
     isOn = true;
@@ -195,5 +201,17 @@ function betAmtIs0() {
     startBtn.prop("disabled", true);
   }
 }
+
+startOverBtn.click(() => {
+  gsap.fromTo(gameOverDiv, { y: 0 }, { duration: 2, ease: "expo", y: -1000 });
+  setTimeout(() => {
+    gameOverDiv.classList.replace("d-block", "d-none");
+  }, 2000);
+  balance = 1000;
+  balanceText.text(`Your Current Balance: $${balance}`);
+  restartBtn.prop("disabled", false);
+  isOn = true;
+  newGameBtn();
+});
 
 window.addEventListener("load", fetchCardsProperties);
